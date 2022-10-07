@@ -67,7 +67,7 @@
             this.btnAdd.TabIndex = 5;
             this.btnAdd.Text = "button1";
             this.btnAdd.UseVisualStyleBackColor = true;
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            
             // 
             // btnDelete
             // 
@@ -77,7 +77,7 @@
             this.btnDelete.TabIndex = 6;
             this.btnDelete.Text = "button1";
             this.btnDelete.UseVisualStyleBackColor = true;
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            
             // 
             // Form1
             // 
