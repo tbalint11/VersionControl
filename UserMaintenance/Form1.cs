@@ -12,6 +12,7 @@ using Excel = Microsoft.Office.Interop.Excel;
 using System.Reflection;
 using Microsoft.Office.Interop.Excel;
 using UserMaintenance.MnbServiceReference;
+using System.Xml;
 
 namespace UserMaintenance
 {
@@ -19,12 +20,12 @@ namespace UserMaintenance
     {
 
 
-        
-        List<RateData> Rates;
-
+       
+        BindingList<RateData> Rates;
         public Form1()
 
         {
+            
             var mnbService = new MNBArfolyamServiceSoapClient();
 
             var request = new GetExchangeRatesRequestBody()
@@ -42,8 +43,26 @@ namespace UserMaintenance
 
             InitializeComponent();
             LoadData();
-            
+            bindingSource1.DataSource = Rates;
+            var xml = new XmlDocument();
+            xml.LoadXml(result);
 
+            foreach (XmlElement element in xml.DocumentElement)
+            {
+               
+                var rate = new RateData();
+                Rates.Add(rate);
+
+                rate.Date = DateTime.Parse(element.GetAttribute("date"));
+
+                var childElement = (XmlElement)element.ChildNodes[0];
+                rate.Currency = childElement.GetAttribute("curr");
+
+                var unit = decimal.Parse(childElement.GetAttribute("unit"));
+                var value = decimal.Parse(childElement.InnerText);
+                if (unit != 0)
+                    rate.Value = value / unit;
+            }
         }
 
         private void LoadData()
