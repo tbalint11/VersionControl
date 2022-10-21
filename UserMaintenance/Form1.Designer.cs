@@ -28,81 +28,42 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.listUsers = new System.Windows.Forms.ListBox();
-            this.txtFullName = new System.Windows.Forms.TextBox();
-            this.lblFullName = new System.Windows.Forms.Label();
-            this.btnAdd = new System.Windows.Forms.Button();
-            this.btnDelete = new System.Windows.Forms.Button();
+            this.components = new System.ComponentModel.Container();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
-            // listUsers
+            // dataGridView1
             // 
-            this.listUsers.FormattingEnabled = true;
-            this.listUsers.Location = new System.Drawing.Point(16, 12);
-            this.listUsers.Name = "listUsers";
-            this.listUsers.Size = new System.Drawing.Size(198, 290);
-            this.listUsers.TabIndex = 0;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(19, 26);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(394, 229);
+            this.dataGridView1.TabIndex = 0;
             // 
-            // txtFullName
+            // bindingSource1
             // 
-            this.txtFullName.Location = new System.Drawing.Point(301, 32);
-            this.txtFullName.Name = "txtFullName";
-            this.txtFullName.Size = new System.Drawing.Size(152, 20);
-            this.txtFullName.TabIndex = 1;
-            // 
-            // lblFullName
-            // 
-            this.lblFullName.AutoSize = true;
-            this.lblFullName.Location = new System.Drawing.Point(240, 35);
-            this.lblFullName.Name = "lblFullName";
-            this.lblFullName.Size = new System.Drawing.Size(35, 13);
-            this.lblFullName.TabIndex = 2;
-            this.lblFullName.Text = "label1";
-            // 
-            // btnAdd
-            // 
-            this.btnAdd.Location = new System.Drawing.Point(243, 107);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(210, 34);
-            this.btnAdd.TabIndex = 5;
-            this.btnAdd.Text = "button1";
-            this.btnAdd.UseVisualStyleBackColor = true;
             
-            // 
-            // btnDelete
-            // 
-            this.btnDelete.Location = new System.Drawing.Point(243, 147);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(210, 34);
-            this.btnDelete.TabIndex = 6;
-            this.btnDelete.Text = "button1";
-            this.btnDelete.UseVisualStyleBackColor = true;
-            
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(484, 323);
-            this.Controls.Add(this.btnDelete);
-            this.Controls.Add(this.btnAdd);
-            this.Controls.Add(this.lblFullName);
-            this.Controls.Add(this.txtFullName);
-            this.Controls.Add(this.listUsers);
+            this.Controls.Add(this.dataGridView1);
             this.Name = "Form1";
             this.Text = "Form1";
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.ListBox listUsers;
-        private System.Windows.Forms.TextBox txtFullName;
-        private System.Windows.Forms.Label lblFullName;
-        private System.Windows.Forms.Button btnAdd;
-        private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.BindingSource bindingSource1;
     }
 }
 
