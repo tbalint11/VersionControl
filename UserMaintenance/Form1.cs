@@ -86,6 +86,19 @@ namespace UserMaintenance
             
         }
 
-        
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void dateTimePicker2_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void CurrencyPick_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
