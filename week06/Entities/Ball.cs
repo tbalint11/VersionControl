@@ -5,9 +5,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using week06.Entities;
+using week06.Abstractions;
 
 
-namespace week06
+namespace week06.Entities
 {
     public class Ball : Toy
     {
