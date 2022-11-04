@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace week06
 {
-    public class BallFactory
+    public class BallFactory : IToyFactory
     {
-        public Ball CreateNew()
+        public Toy CreateNew()
         {
             return new Ball();
         }

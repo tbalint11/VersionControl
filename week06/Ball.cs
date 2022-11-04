@@ -17,9 +17,6 @@ namespace week06
         }
         
 
-        public void MoveBall()
-        {
-            Left += 1;
-        }
+        
     }
 }
