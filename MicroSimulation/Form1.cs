@@ -23,6 +23,11 @@ namespace MicroSimulation
         public Form1()
         {
             InitializeComponent();
+            
+        }
+
+        private void Simulation()
+        {
             Population = GetPopulation(@"C:\Temp\nép.csv");
             BirthProbabilities = GetBirthProbabilities(@"C:\Temp\születés.csv");
             DeathProbabilities = GetDeathProbabilities(@"C:\Temp\halál.csv");
@@ -44,6 +49,7 @@ namespace MicroSimulation
                     string.Format("Év:{0} Fiúk:{1} Lányok:{2}", year, nbrOfMales, nbrOfFemales));
             }
         }
+
         private void SimStep(int year, Person person)
         {
             //Ha halott akkor kihagyjuk, ugrunk a ciklus következő lépésére
@@ -141,5 +147,9 @@ namespace MicroSimulation
             return deathprobability;
         }
 
+        private void btnStart_Click(object sender, EventArgs e)
+        {
+            Simulation();
+        }
     }
 }
