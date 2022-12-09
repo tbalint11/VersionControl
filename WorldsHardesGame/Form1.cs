@@ -74,7 +74,7 @@ namespace WorldsHardesGame
             gc.Start();
 
             var winners = from p in topPerformers
-                          where p.IsWinner
+                          where !p.IsWinner
                           select p;
             if (winners.Count() > 0)
             {
@@ -85,7 +85,14 @@ namespace WorldsHardesGame
 
 
         }
-    
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            gc.ResetCurrentLevel();
+            gc.AddPlayer(winnerBrain.Clone());
+            gc.AddPlayer();
+            ga.Focus();
+            gc.Start(true);
+        }
     }
 }
