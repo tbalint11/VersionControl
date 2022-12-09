@@ -19,7 +19,8 @@ namespace WorldsHardesGame
         int nbrOfSteps = 10;
         int nbrOfStepsIncrement = 10;
         int generation = 1;
-        
+        Brain winnerBrain = null;
+
         public Form1()
         {
             InitializeComponent();
@@ -30,7 +31,7 @@ namespace WorldsHardesGame
             gc.Start(true);
 
 
-            
+
             gc.GameOver += Gc_GameOver;
 
             for (int i = 0; i < populationSize; i++)
@@ -38,10 +39,7 @@ namespace WorldsHardesGame
                 gc.AddPlayer(nbrOfSteps);
             }
             gc.Start();
-            var playerList = from p in gc.GetCurrentPlayers()
-                             orderby p.GetFitness() descending
-                             select p;
-            var topPerformers = playerList.Take(populationSize / 2).ToList();
+            
 
 
 
@@ -53,6 +51,11 @@ namespace WorldsHardesGame
             label1.Text = string.Format(
                 "{0}. generáció",
                 generation);
+
+            var playerList = from p in gc.GetCurrentPlayers()
+                             orderby p.GetFitness() descending
+                             select p;
+            var topPerformers = playerList.Take(populationSize / 2).ToList();
 
             gc.ResetCurrentLevel();
             foreach (var p in topPerformers)
@@ -69,6 +72,20 @@ namespace WorldsHardesGame
                     gc.AddPlayer(b.Mutate());
             }
             gc.Start();
+
+            var winners = from p in topPerformers
+                          where p.IsWinner
+                          select p;
+            if (winners.Count() > 0)
+            {
+                winnerBrain = winners.FirstOrDefault().Brain.Clone();
+                gc.GameOver -= Gc_GameOver;
+                return;
+            }
+
+
         }
+    
+
     }
 }
